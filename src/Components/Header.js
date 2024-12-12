@@ -1,9 +1,14 @@
 import { useSelector } from "react-redux";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
+  const [toggleLogin, setToggleLogin] = useState("login");
+
+  const handleLoginTOggle = () => {
+    setToggleLogin(toggleLogin === "login"? "logout" : "login");
+  };
 
   return (
     <div className="sticky top-0 z-50 flex justify-between bg-gray-200 drop-shadow-xl">
@@ -30,8 +35,11 @@ const Header = () => {
           <li className="p-2 m-2 text-xl font-bold text-black">
             <Link to="/cart">Cart ({cartItems.length})</Link>
           </li>
-          <button className="text-white font-bold m-2 w-16 h-10 rounded-tr-lg rounded-bl-lg bg-gradient-to-r from-blue-500 to-violet-800 hover:from-teal-400 hover:to-blue-500">
-            Login
+          <button
+            onClick={handleLoginTOggle}
+            className="text-white font-bold m-2 w-16 h-10 rounded-tr-lg rounded-bl-lg bg-gradient-to-r from-blue-500 to-violet-800 hover:from-teal-400 hover:to-blue-500"
+          >
+            {toggleLogin}
           </button>
         </ul>
       </div>

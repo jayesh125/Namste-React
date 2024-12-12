@@ -40,6 +40,7 @@ const Body = () => {
           </div>
           <input
             type="search"
+            data-testid = "searchInput"
             id="default-search"
             className="block w-[560px] p-4 ps-10 text-sm text-gray-300 border border-gray-300 rounded-lg bg-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-900 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Search for restaurants..."

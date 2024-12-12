@@ -1,11 +1,14 @@
 import { CDN_URL } from "../utils/constants";
 
 const ResCard = ({ resData }) => {
-  const { name, areaName, avgRating, cloudinaryImageId, cuisines, sla } =
+  const { name, areaName, avgRating, cloudinaryImageId, cuisines, sla, id } =
     resData.info;
 
+  // console.log(resData);
+  
+
   return (
-    <div className="group mb-8 transition-transform duration-300 ease-in-out hover:scale-90">
+    <div data-testid="REScard" className="group mb-8 transition-transform duration-300 ease-in-out hover:scale-90">
       <div className="w-56 h-40 p-1 drop-shadow-md">
         <img
           src={CDN_URL + cloudinaryImageId}

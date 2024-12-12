@@ -19,7 +19,7 @@ const useRestaurants = () => {
             const indexOfCard = useFindeIndex(cards);
             const restaurants = cards[indexOfCard]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             
-            console.log("Restaurants:", restaurants);
+            // console.log("Restaurants:", restaurants);
             setListOfRestaurants(restaurants || []);
         } catch (error) {
             console.error("Error fetching data:", error);
